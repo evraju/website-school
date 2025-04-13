@@ -1,0 +1,249 @@
+body {
+    font-family: 'Baloo 2', sans-serif;
+    background-color: #fefbd8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  
+  header {
+    background: url('./school.jpg');
+    height: 60vh;
+    background-size: cover;
+    background-color: #ffb347;
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    border-bottom: 5px solid #ffa07a;
+  }
+  
+  section {
+    padding: 20px;
+    margin: 10px;
+    background-color: #fff8dc;
+    border-radius: 12px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  h2 {
+    color: #f97316;
+  }
+  
+  ul {
+    list-style: square;
+    padding-left: 20px;
+  }
+  
+  footer {
+    text-align: center;
+    background-color: #ffcc5c;
+    padding: 15px;
+    margin-top: 20px;
+    color: #333;
+    font-size: 0.9em;
+  }
+  
+  body {
+    font-family: "Comic Sans MS", cursive;
+    background-color: #e0f7fa; /* हलका निळा */
+    margin: 0;
+    padding: 0;
+    color: #03396c;
+  }
+  
+  header {
+    background-color: #0288d1; /* गडद निळा */
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    border-bottom: 5px solid #0277bd;
+  }
+  
+  section {
+    padding: 20px;
+    margin: 10px;
+    background-color: #b3e5fc; /* मध्यम निळा */
+    border-radius: 12px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  h2 {
+    color: #01579b; /* heading साठी गडद निळा */
+  }
+  
+  ul {
+    list-style: square;
+    padding-left: 20px;
+  }
+  
+  footer {
+    text-align: center;
+    background-color: #81d4fa;
+    padding: 15px;
+    margin-top: 20px;
+    color: #01579b;
+    font-size: 0.9em;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .contact-form label {
+    text-align: left;
+    font-weight: bold;
+    color: #01579b;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #81d4fa;
+    background-color: #e1f5fe;
+  }
+  
+  .contact-form button {
+    background-color: #0288d1;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .contact-form button:hover {
+    background-color: #0277bd;
+  }
+  
+  .school-info {
+    background-color: #bbdefb;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+    color: #0d47a1;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .school-info a {
+    color: #0d47a1;
+    text-decoration: underline;
+  }
+  
+  /* ===== Animations ===== */
+.animate {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  
+  .animate.slide {
+    animation: slideInLeft 1s ease-out forwards;
+  }
+  
+  .animate.fade {
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  
+
+  .teachers-info {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .teachers-info h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #003366;
+  }
+  
+  .teachers-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .teacher-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .teacher-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .teacher-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .teacher-card h3 {
+    margin-top: 10px;
+    color: #CF0F47;
+    font-size: 20px;
+  }
+  
+  .teacher-card p {
+    margin: 5px 0;
+    color: #333;
+  }
+
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  
+  /* Keyframes */
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  

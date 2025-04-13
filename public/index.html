@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="mr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>जिल्हा परिषद प्राथमिक शाळा गारखिंडी</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="shortcut icon" href="./public/logo.jpeg" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Tiro Devanagari Marathi', serif;
+    }
+
+    .navbar {
+      background-color: #003366;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+
+
+    .navbar .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      padding: 0 20px;
+      text-align: right;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      font-family: 'Tiro Devanagari Marathi', serif;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .navbar a:hover {
+      background-color: #0055aa;
+    }
+
+    @media (max-width: 768px) {
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        background-color: #003366;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .navbar ul.active {
+        display: flex;
+      }
+
+      .navbar .menu-toggle {
+        display: block;
+      }
+    }
+
+    header[loading='lazy'] {
+      background: url('./school.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 50vh;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: rgb(15, 39, 250);
+      text-shadow:
+        -1px -1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white;
+      font-size: 48px;
+      font-weight: bold;
+    }
+
+    header h2 {
+      color: #CF0F47;
+      font-size: 2rem;
+      text-shadow:
+        -1px -1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      font-size: 30px;
+      cursor: pointer;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    .nav-container {
+      display: flex;
+      /* justify-content: space-between; */
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      transition: max-height 0.5s ease-in-out;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        overflow: hidden;
+        max-height: 0;
+        background-color: #003366;
+        width: 100%;
+      }
+
+      .nav-links.active {
+        max-height: 500px;
+        /* enough to fit all links */
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+
+    #gallery {
+      padding: 40px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    .gallery-title {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 200px;
+      /* Fixed height for uniformity */
+      object-fit: cover;
+      /* Crops and fills nicely */
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.4s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .gallery-grid img.loaded {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .gallery-grid img {
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="animate fade">
+    <img src="./public/logo.jpeg" alt="">
+    <h1>🌼जिल्हा परिषद प्राथमिक शाळा गारखिंडी 🌼</h1>
+    <h2>ता. पारनेर जि. अहिल्यानगर </h2>
+    <p>ज्ञानाचा प्रकाश प्रत्येकासाठी !</p>
+  </header>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">शाळा</div>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">आमच्याविषयी</a></li>
+        <li><a href="./info.html">उपक्रम</a></li>
+        <li><a href="./galary.html">गॅलरी</a></li>
+        <li><a href="./teacher-info.html">शिक्षक माहिती</a></li>
+        <li><a href="./videos.html">व्हिडीओ</a></li>
+        <li><a href="https://drive.google.com/drive/folders/157r3YJYrswez9Ohomsczerx8Fos-H0oO?usp=sharing" target="_blank">SQAAF</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="about animate slide" id="about">
+    <h2>🔍 आमच्याविषयी</h2>
+    <p>🏆 गौरवशाली कामगिरी
+      आमची शाळा "मुख्यमंत्री माझी शाळा, सुंदर शाळा" उपक्रमांतर्गत उत्कृष्ट कामगिरी करून प्रथम पुरस्कार प्राप्त करण्यात
+      यशस्वी ठरली आहे. विद्यार्थ्यांचा सर्वांगीण विकास, स्वच्छ व सुसज्ज परिसर, शैक्षणिक गुणवत्ता आणि नवोपक्रम यामुळेच हा
+      सन्मान मिळाला आहे. हा पुरस्कार आमच्या शाळेच्या शिक्षणातील गुणवत्ता व प्रयत्नांची पावती आहे..</p>
+  </section>
+
+
+  <section id="info" class="animate slide">
+    <h2>📝 शाळेचे उपक्रम</h2>
+    <ul>
+      <li>💡 बालसभा - विद्यार्थ्यांना आत्मविश्वास व संवाद कौशल्य विकसित करण्यासाठी</li>
+      <li>📖 वाचनालय उपक्रम - पुस्तकप्रेम वाढवण्यासाठी</li>
+      <li>🎨 चित्रकला स्पर्धा - सर्जनशीलतेला चालना देण्यासाठी</li>
+      <li>🧪 विज्ञान प्रदर्शन - वैज्ञानिक दृष्टिकोन निर्माण करण्यासाठी</li>
+      <li>🏃‍♂️ क्रीडा स्पर्धा - शारीरिक विकासासाठी विविध खेळांचे आयोजन</li>
+      <li>🌱 वृक्षारोपण - पर्यावरण संवर्धनासाठी विद्यार्थ्यांचा सहभाग</li>
+      <li>🎭 सांस्कृतिक कार्यक्रम - नृत्य, नाट्य व गाण्यांचे आयोजन</li>
+      <li>🧘‍♀️ योग अभ्यास - विद्यार्थ्यांचे मानसिक आरोग्य आणि एकाग्रता वाढवण्यासाठी</li>
+      <li>📅 राष्ट्रीय दिन व उत्सव साजरे करणे - देशभक्ती व संस्कृतीची जाणीव देण्यासाठी</li>
+      <li>💻 डिजिटल शिक्षण - तंत्रज्ञानाच्या साहाय्याने शिक्षण</li>
+    </ul>
+  </section>
+
+  <section class="teachers-info animate slide" id="teachers">
+    <h2>👩‍🏫 आमचे शिक्षक</h2>
+    <div class="teachers-grid" id="teacher-info">
+
+      <div class="teacher-card">
+        <img src="./photos/raju_kolhe.jpg" alt="शिक्षक 1" loading="lazy">
+        <h3>श्री. प्रमोद व्यवहारे </h3>
+        <p><strong>पद:</strong> मुख्याध्यापक</p>
+        <p><strong>शिक्षण:</strong> एम.ए. डी एड</p>
+        <p><strong>सेवा दिनांक:</strong> १८ ऑक्टोबर १९९३ </p>
+      </div>
+      <div class="teacher-card">
+        <img src="./photos/raju_kolhe.jpg" alt="शिक्षक 1" loading="lazy">
+        <h3>श्रीम. वर्षा डोंगरे </h3>
+        <p><strong>पद:</strong> पदवीधर शिक्षिका </p>
+        <p><strong>शिक्षण:</strong> एम.ए. डी एड</p>
+        <p><strong>सेवा दिनांक:</strong> १५ फेब्रुवारी २०१० </p>
+      </div>
+      <div class="teacher-card">
+        <img src="./photos/raju_kolhe.jpg" alt="शिक्षक 1" loading="lazy">
+        <h3>श्री. राजू कोल्हे </h3>
+        <p><strong>पद:</strong> उपाध्यापक </p>
+        <p><strong>शिक्षण:</strong> एम.ए. डी एड</p>
+        <p><strong>सेवा दिनांक:</strong> २२ जुलै १९९६ </p>
+      </div>
+
+
+
+      <!-- आणखी शिक्षकांची माहिती खालीलप्रमाणे टाका -->
+
+    </div>
+  </section>
+
+
+
+
+
+  <section class="school-info animate fade" id="contact">
+    <h2>🏫 आमच्याशी संपर्क </h2>
+    <p><strong>ईमेल:</strong> <a href="mailto:zpschoolgarkhindi@gmail.com">zpschoolgarkhindi@gmail.com</a></p>
+    <p><strong>पत्ता:</strong> मु. गारखिंडी, पोस्ट - पाडळी आळे, तालुका - पारनेर,<br>
+      जिल्हा - अहिल्यानगर, पिन कोड - ४१४३०५</p>
+  </section>
+
+  <section class="subjects animate slide">
+    <h2>📚 अभ्यासक्रम</h2>
+    <ul>
+      <li>मराठी</li>
+      <li>गणित</li>
+      <li>इंग्रजी </li>
+      <li>परीसरअभ्यास </li>
+      <li>विज्ञान </li>
+      <li>समाज अभ्यास </li>
+      <li>कला </li>
+      <li>कार्यानुभव </li>
+      <li>शारीरिक शिक्षण </li>
+    </ul>
+  </section>
+
+  <section class="teachers animate fade">
+    <h2>👩‍🏫 आमचे शिक्षक</h2>
+    <p>आमच्याकडे प्रेमळ, अनुभवी आणि सहकार्यशील शिक्षकवृंद आहे.</p>
+  </section>
+
+  <section id="contact" class="contact animate slide">
+    <h2>📞 आमच्याशी संपर्क</h2>
+    <p>फोन: 9922181375</p>
+    <p>ईमेल: zpschoolgarkhindi@gmail.com</p>
+  </section>
+
+
+
+  <footer class="animate slide">
+    <p>© 2025 जिल्हा परिषद प्राथमिक शाळा गारखिंडी. सर्व हक्क राखीव.</p>
+  </footer>
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('nav-links');
+      navLinks.classList.toggle('active');
+    }
+
+    // Auto-close on link click (mobile only)
+    document.addEventListener('DOMContentLoaded', () => {
+      const navLinks = document.getElementById('nav-links');
+      const links = navLinks.querySelectorAll('a');
+
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= 768) {
+            navLinks.classList.remove('active');
+          }
+        });
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>
