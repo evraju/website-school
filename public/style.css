@@ -6,11 +6,11 @@ body {
   color: #333;
 }
 
-#about,#info, #teachers, .subjects{
+#about,#info, #teachers, .subjects, .subjects{
   font-family: 'Tiro Devanagari Marathi', serif;
   li{
 
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 a{
