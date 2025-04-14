@@ -207,6 +207,15 @@ footer {
   /* subtle shadow */
 }
 
+.all-teacher{
+  img{
+    width: 80%;
+    height: 75vh;
+    border-radius:12px ;
+
+  }
+}
+
 
 
 .teacher-card h3 {
@@ -253,6 +262,32 @@ footer {
 #facilities,#info,#about,#about{
   ul,li{
     line-height: 2rem;
+  }
+}
+
+.teachers-heading {
+  font-size: 1.8rem;
+  color: #1a237e;
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(to right, #e8eaf6, #ffffff);
+  padding: 12px 24px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 300px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  letter-spacing: 1px;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
