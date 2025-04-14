@@ -308,6 +308,36 @@ footer {
   transform: scale(1.03);
 }
 
+
+
+/* shalecvhi mahiti */
+
+.school-info {
+  font-family: 'Tiro Devanagari Marathi', serif;
+  padding: 30px 20px;
+  background-color: #f9fbe7;
+  border-radius: 12px;
+  margin: 30px auto;
+  max-width: 700px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.school-info h2 {
+  text-align: center;
+  color: #33691e;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.info-box p {
+  font-size: 1.3rem;
+  color: #37474f;
+  margin: 10px 0;
+  line-height: 1.6;
+  padding-left: 10px;
+  border-left: 4px solid #8bc34a;
+}
+
 @keyframes fadeInDown {
   from {
     opacity: 0;
