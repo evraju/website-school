@@ -216,8 +216,8 @@ footer {
 
 .all-teacher{
   img{
-    width: 80%;
-    height: 75vh;
+    width: 100%;
+    height: auto;
     border-radius:12px ;
 
   }
