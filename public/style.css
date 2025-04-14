@@ -6,6 +6,13 @@ body {
   color: #333;
 }
 
+#about,#info, #teachers, .subjects{
+  font-family: 'Tiro Devanagari Marathi', serif;
+  li{
+
+    font-size: 20px;
+  }
+}
 a{
   text-decoration: none;
 }
@@ -278,6 +285,10 @@ footer {
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
   letter-spacing: 1px;
   animation: fadeInDown 0.8s ease-out;
+}
+
+.font-normal{
+  font-size: 1rem;
 }
 
 @keyframes fadeInDown {
