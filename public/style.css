@@ -250,6 +250,12 @@ footer {
   border: none;
 }
 
+#facilities,#info,#about{
+  ul{
+    line-height: 2rem;
+  }
+}
+
 /* Responsive for smaller screens */
 @media (max-width: 768px) {
   .video-container iframe {
