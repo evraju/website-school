@@ -250,8 +250,8 @@ footer {
   border: none;
 }
 
-#facilities,#info,#about{
-  ul{
+#facilities,#info,#about,#about{
+  ul,li{
     line-height: 2rem;
   }
 }
